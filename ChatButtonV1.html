@@ -2,38 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Legacy Live Agent Chat</title>
+  <title>Salesforce Live Agent Chat</title>
   <script type='text/javascript' src='https://c.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/content/g/js/64.0/deployment.js'></script>
   <script type='text/javascript'>
     liveagent.init('https://d.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/chat', '5720Y0000004Wt8', '00D0E00000022q8');
   </script>
 </head>
 <body>
-  <h2>Legacy Chat Test</h2>
-
-  <!-- Online button -->
-  <a id="liveagent_button_online_5730Y000000H760"
+  <!-- Chat Online Button -->
+  <a id="liveagent_button_online_5730E0000004Cks"
      href="javascript://Chat"
-     style="display: none; padding: 10px; background: green; color: white; text-decoration: none;"
-     onclick="liveagent.startChat('5730Y000000H760')">
+     style="display: none; padding:10px; background:#28a745; color:white; border-radius:5px; text-decoration:none;"
+     onclick="liveagent.startChat('5730E0000004Cks')">
      💬 Start Chat
   </a>
 
-  <!-- Offline message -->
-  <div id="liveagent_button_offline_5730Y000000H760" style="display: none; color: red;">
-    Chat is currently offline.
+  <!-- Chat Offline Message -->
+  <div id="liveagent_button_offline_5730E0000004Cks"
+       style="display: none; padding:10px; background:#dc3545; color:white; border-radius:5px;">
+       ❌ Chat is Offline
   </div>
 
   <script type="text/javascript">
     if (!window._laq) { window._laq = []; }
-    window._laq.push(function(){
+    window._laq.push(function() {
       liveagent.showWhenOnline(
-        '5730Y000000H760',
-        document.getElementById('liveagent_button_online_5730Y000000H760')
+        '5730E0000004Cks',
+        document.getElementById('liveagent_button_online_5730E0000004Cks')
       );
       liveagent.showWhenOffline(
-        '5730Y000000H760',
-        document.getElementById('liveagent_button_offline_5730Y000000H760')
+        '5730E0000004Cks',
+        document.getElementById('liveagent_button_offline_5730E0000004Cks')
       );
     });
   </script>
