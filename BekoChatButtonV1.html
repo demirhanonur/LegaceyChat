@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy Chat Test</title>
+  <script type="text/javascript" src="https://c.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/content/g/js/64.0/deployment.js"></script>
+  <script type="text/javascript">
+    liveagent.init('https://d.la12s-core1.sfdc-cehfhs.salesforceliveagent.com/chat', '5720Y0000004Wt8', '00D0E00000022q8');
+  </script>
+</head>
+<body>
+  <h2>Legacy Chat Button Test</h2>
+
+  <!-- Online Button -->
+  <a id="liveagent_button_online_5730E0000008Phd" 
+     href="javascript://Chat" 
+     style="display: none;" 
+     onclick="liveagent.startChat('5730E0000008Phd')">
+     <button style="padding:10px 20px; font-size:16px; cursor:pointer;">Start Chat</button>
+  </a>
+
+  <!-- Offline Button -->
+  <div id="liveagent_button_offline_5730E0000008Phd" style="display: none;">
+     <button disabled style="padding:10px 20px; font-size:16px;">Chat Unavailable</button>
+  </div>
+
+  <script type="text/javascript">
+    if (!window._laq) { window._laq = []; }
+    window._laq.push(function(){
+      liveagent.showWhenOnline('5730E0000008Phd', 
+        document.getElementById('liveagent_button_online_5730E0000008Phd'));
+      liveagent.showWhenOffline('5730E0000008Phd', 
+        document.getElementById('liveagent_button_offline_5730E0000008Phd'));
+    });
+  </script>
+</body>
+</html>
