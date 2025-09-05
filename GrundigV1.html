@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Enhanced Messaging Test</title>
-  </head>
-  <body>
-    <h2>Bu sayfa sadece test amaçlıdır. Chat widget aşağıda yükleniyor...</h2>
+<head>
+ <meta charset="UTF-8">
+ <title>Embedded Messaging Test</title>
+</head>
+<body>
+ <h2>Salesforce Embedded Messaging Test</h2>
+ <p>Click on the chat icon (once loaded) to start a conversation.</p>
 
-    <script type="text/javascript">
-      function initEmbeddedMessaging() {
-        try {
-          embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
+ <script type="text/javascript">
+  function initEmbeddedMessaging() {
+   try {
+    embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
 
-          embeddedservice_bootstrap.init(
-            "00D0E00000022q8", // Org Id
-            "ARC_TR_Grundig_Messaging_for_InAppWebDeployment", // Deployment Name
-            "https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068", // Site URL
-            {
-              scrt2URL: "https://argrp--test.sandbox.my.salesforce-scrt.com",
-            }
-          );
-        } catch (err) {
-          console.error("Error loading Embedded Messaging: ", err);
-        }
-      }
-    </script>
+    embeddedservice_bootstrap.init(
+     "00D0E00000022q8", // Salesforce Org Id
+     "ARC_TR_Grundig_Messaging_for_InAppWebDeployment", // Deployment name
+     "https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068";, // Site endpoint
+     {
+      scrt2URL: "https://argrp--test.sandbox.my.salesforce-scrt.com";
+     }
+    );
+   } catch (err) {
+    console.error("Error loading Embedded Messaging: ", err);
+   }
+  }
+ </script>
 
-    <script
-      type="text/javascript"
-      src="https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068/assets/js/bootstrap.min.js"
-      onload="initEmbeddedMessaging()"
-    ></script>
-  </body>
+ <script type="text/javascript" 
+  src="https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068/assets/js/bootstrap.min.js" ;
+  onload="initEmbeddedMessaging()">
+ </script>
+</body>
 </html>
