@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Enhanced Messaging Test - Preview</title>
-</head>
-<body>
-  <h2>Bu sayfa sadece test amaçlıdır. Chat widget aşağıda yükleniyor...</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Enhanced Messaging Test</title>
+  </head>
+  <body>
+    <h2>Bu sayfa sadece test amaçlıdır. Chat widget aşağıda yükleniyor...</h2>
 
-  <!-- Salesforce Embedded Messaging JS -->
-  <script src="https://argrp--test.sandbox.my.site.com/embeddedservice/5.0/esw.min.js"></script>
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "en_US"; // For example, enter 'en' or 'en-US'
 
-  <script type="text/javascript">
-    function initEmbeddedMessaging() {
-      try {
-        if (!embeddedservice_bootstrap) {
-          console.error('embeddedservice_bootstrap is not defined yet.');
-          return;
+          embeddedservice_bootstrap.init(
+            "00D0E00000022q8", // Org Id
+            "ARC_TR_Grundig_Messaging_for_InAppWebDeployment", // Deployment Name
+            "https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068", // Site URL
+            {
+              scrt2URL: "https://argrp--test.sandbox.my.salesforce-scrt.com",
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
         }
-
-        embeddedservice_bootstrap.settings.language = 'en_US';
-
-        embeddedservice_bootstrap.init(
-          '00D0E00000022q8', // Org Id
-          'ARC_TR_GrundigEnhancedChatDeployment', // Deployment Name
-          'https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigEnhanced1756125546666', // Site URL
-          {
-            deploymentId: 'YOUR_DEPLOYMENT_ID', // Salesforce deploymentId al
-            eswLiveAgentDevName: 'YOUR_ESW_DEV_NAME' // Salesforce eswLiveAgentDevName al
-          }
-        );
-      } catch (err) {
-        console.error('Error loading Embedded Messaging: ', err);
       }
-    }
+    </script>
 
-    // Wait until the bootstrap script loads
-    window.addEventListener('load', initEmbeddedMessaging);
-  </script>
-
-  <!-- Bootstrap JS for styling/widget UI -->
-  <script src="https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigEnhanced1756125546666/assets/js/bootstrap.min.js"></script>
-</body>
+    <script
+      type="text/javascript"
+      src="https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
+  </body>
 </html>
